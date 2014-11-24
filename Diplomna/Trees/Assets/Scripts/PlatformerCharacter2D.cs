@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlatformerCharacter2D : MonoBehaviour 
 {
@@ -38,6 +38,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		// Set the vertical animation
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+		anim.SetFloat("vSpeed", rigidbody2D.velocity.x);
+
 	}
 
 
@@ -68,16 +70,15 @@ public class PlatformerCharacter2D : MonoBehaviour
 			anim.SetFloat("Speed", Mathf.Abs(moveTop));
 
 			// Move the character
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, /*move  * maxSpeed*/ move * maxSpeed);
-			print (move);
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, move * maxSpeed);
 			rigidbody2D.velocity = new Vector2(moveTop * maxSpeed, rigidbody2D.velocity.y);
 
 			// If the input is moving the player right and the player is facing left...
-			if((move > 0  && !facingRight) && (moveTop > 0 && !facingRight) ) 
+			if(moveTop > 0  && !facingRight) 
 				// ... flip the player.
 				Flip();
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if((move < 0 && facingRight) && (moveTop < 0 && facingRight))
+			else if(moveTop < 0 && facingRight)
 				// ... flip the player.
 				Flip();
 		}
