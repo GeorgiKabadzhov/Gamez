@@ -19,7 +19,14 @@ public class PlatformerCharacter2D : MonoBehaviour
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
+	float maxHealth;
+	float currHealth;
 
+	void Start() {
+		maxHealth = 100;
+		currHealth = 100;
+
+	}
 
     void Awake()
 	{
@@ -29,6 +36,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 		anim = GetComponent<Animator>();
 	}
 
+	void Update() {
+
+
+	}
 
 	void FixedUpdate()
 	{
@@ -37,9 +48,13 @@ public class PlatformerCharacter2D : MonoBehaviour
 		anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation
-		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
-		anim.SetFloat("vSpeed", rigidbody2D.velocity.x);
+		anim.SetFloat("vSpeed", rigidbody.velocity.y);
+		anim.SetFloat("vSpeed", rigidbody.velocity.x);
 
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			print ("Boiboi");
+			OnCollisionEnter(rigidbody); 
+		}
 	}
 
 
@@ -70,8 +85,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 			anim.SetFloat("Speed", Mathf.Abs(moveTop));
 
 			// Move the character
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, move * maxSpeed);
-			rigidbody2D.velocity = new Vector2(moveTop * maxSpeed, rigidbody2D.velocity.y);
+			rigidbody.velocity = new Vector2(rigidbody.velocity.x, move * maxSpeed);
+			rigidbody.velocity = new Vector2(moveTop * maxSpeed, rigidbody.velocity.y);
 
 			// If the input is moving the player right and the player is facing left...
 			if(moveTop > 0  && !facingRight) 
@@ -87,7 +102,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         if (grounded && jump) {
             // Add a vertical force to the player.
             anim.SetBool("Ground", false);
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            rigidbody.AddForce(new Vector2(0f, jumpForce));
         }
 	}
 
@@ -102,4 +117,17 @@ public class PlatformerCharacter2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	void OnCollisionEnter(Collision coll) {
+		if (coll.gameObject.tag == "Enemy") {
+			print ("Pipash Zaeka");
+			EnemyHealth.curHealthEn -= 1;
+			Destroy(coll.gameObject);
+	//		this.GetComponent<PlayerHealth>().curHealth -= 1;
+			}
+		
+	}  
 }
+
+
+

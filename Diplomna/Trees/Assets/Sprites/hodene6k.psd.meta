@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: c27440885beb710428475f9cd42f3cda
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hodene6k
+    21300002: Right1
+    21300004: Right4
+    21300006: Right5
+    21300008: Right2
+    21300010: Right3
+    21300012: Right6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Right1
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1055
+        width: 768
+        height: 2018
+      alignment: 9
+      pivot: {x: .473457664, y: .385517418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Right4
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 1048
+        width: 748
+        height: 2004
+      alignment: 9
+      pivot: {x: .409159452, y: .377936333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Right5
+      rect:
+        serializedVersion: 2
+        x: 3850
+        y: 1041
+        width: 775
+        height: 2026
+      alignment: 9
+      pivot: {x: .438627154, y: .372554183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Right2
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 1055
+        width: 755
+        height: 2004
+      alignment: 9
+      pivot: {x: .455000848, y: .384717613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Right3
+      rect:
+        serializedVersion: 2
+        x: 2294
+        y: 1061
+        width: 795
+        height: 1984
+      alignment: 9
+      pivot: {x: .41452989, y: .359581679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Right6
+      rect:
+        serializedVersion: 2
+        x: 4611
+        y: 1055
+        width: 829
+        height: 2011
+      alignment: 9
+      pivot: {x: .491803467, y: .347951561}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
