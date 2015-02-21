@@ -46,7 +46,36 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\enemyScript.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Character.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Inventory.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\InventoryDisplay.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Items\EquipmentEffect.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Items\FirstPersonPickUp.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Items\Item.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Items\ItemEffect.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Other\ChangeScene.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Other\InvAudio.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Other\InvPauseGame.js" />
+     <Compile Include="Assets\Outsource Assets\Inventory\Scripts\Other\WeaponSwitch.js" />
+     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
+     <None Include="Assets\Outsource Assets\Inventory\Credits + C#.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
+     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
+     <None Include="Assets\AstarPathfindingProject\link.xml" />
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/roshko/Documents/GitHub/Gamez/Diplomna/Trees/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/roshko/Documents/GitHub/Gamez/Diplomna/Trees/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
