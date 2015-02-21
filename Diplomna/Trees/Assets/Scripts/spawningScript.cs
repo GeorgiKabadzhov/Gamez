@@ -2,22 +2,21 @@
 using System.Collections;
 
 public class spawningScript : MonoBehaviour {
-
-	public float spawnTime = 5f; 
-	public float spawnDelay = 3f;
-	public GameObject[] enemies;
-	// Use this for initialization
-	void Start () {
-
-		InvokeRepeating ("Spawn", spawnDelay, spawnTime);
 	
+	public Transform prefab;
+	
+	public IEnumerator Do() {
+		yield return new WaitForSeconds(5);    
+		// code to be executed after 5 secs
 	}
 	
-	// Update is called once per frame
-	void Spawn () {
-	
-		int enemyIndex = Random.Range (0, enemies.Length);
-		Instantiate(enemies[enemyIndex], transform.position, transform.rotation);
+	public void Awake() {
+		InvokeRepeating ("Spawn", 0, 5);
+	//	yield return StartCoroutine("Do");
+		
+	}
 
+	public void Spawn() {
+		Instantiate (prefab);
 	}
 }

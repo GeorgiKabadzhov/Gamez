@@ -13,6 +13,8 @@ public class EnemyScript : MonoBehaviour {
 	public bool colliding;
 	public Transform sightStart;
 	public Transform sightEnd;
+	public bool isQuitting;
+	public float myPosition;
 	void Start (){
 
 	}
@@ -23,6 +25,8 @@ public class EnemyScript : MonoBehaviour {
 	}
 	void Update () {
 		int direction;
+
+		//myPosition = Tranform.position;
 
 		rigidbody.velocity = new Vector2 (speed,rigidbody.velocity.y);
 		colliding = Physics.Linecast (sightStart.position, sightEnd.position);
@@ -44,4 +48,5 @@ public class EnemyScript : MonoBehaviour {
 			}
 		}
 	}
+
 }

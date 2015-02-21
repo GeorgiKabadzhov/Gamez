@@ -1,4 +1,5 @@
 using UnityEngine;
+//using Inventory;
 
 public class PlatformerCharacter2D : MonoBehaviour 
 {
@@ -18,13 +19,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool grounded = false;								// Whether or not the player is grounded.
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
-	Animator anim;										// Reference to the player's animator component.
-	float maxHealth;
-	float currHealth;
+	Animator anim;
+	int n = 0;
+	bool touchEnemy = false;
+	public GameObject enemy;
 
 	void Start() {
-		maxHealth = 100;
-		currHealth = 100;
 
 	}
 
@@ -51,9 +51,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 		anim.SetFloat("vSpeed", rigidbody.velocity.y);
 		anim.SetFloat("vSpeed", rigidbody.velocity.x);
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyUp (KeyCode.Space))  {
 			print ("Boiboi");
-			OnCollisionEnter(rigidbody); 
+
+			onAttack();
+
 		}
 	}
 
@@ -76,10 +78,6 @@ public class PlatformerCharacter2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if(grounded || airControl)
 		{
-			// Reduce the speed if crouching by the crouchSpeed multiplier
-			move = (crouch ? move * crouchSpeed : move);
-			moveTop = (crouch ? moveTop * crouchSpeed : moveTop);
-
 			// The Speed animator parameter is set to the absolute value of the horizontal input.
 			anim.SetFloat("Speed", Mathf.Abs(move));
 			anim.SetFloat("Speed", Mathf.Abs(moveTop));
@@ -119,14 +117,37 @@ public class PlatformerCharacter2D : MonoBehaviour
 	}
 
 	void OnCollisionEnter(Collision coll) {
+		touchEnemy = false;
+
 		if (coll.gameObject.tag == "Enemy") {
+			touchEnemy = true;
 			print ("Pipash Zaeka");
-			EnemyHealth.curHealthEn -= 1;
-			Destroy(coll.gameObject);
-	//		this.GetComponent<PlayerHealth>().curHealth -= 1;
+		//	touchEnemy = false;
+			if (EnemyHealth.curHealthEn == 0) {
+				Destroy (coll.gameObject);
 			}
-		
+						//		this.GetComponent<PlayerHealth>().curHealth -= 1;
+
+		} else if (coll.gameObject.tag == "Loot") {
+			print ("Pipash purjola");
+//			TreesInventory.Inventory[TreesInventory.Inventory.Length-1] = coll.gameObject;
+		}
+	
 	}  
+
+	void onAttack() {
+		//if(touchEnemy == true) {
+		//	print ("Ready to attack");
+			while ((touchEnemy == true) && (EnemyHealth.curHealthEn >= 0)) {
+				EnemyHealth.curHealthEn -= 3;
+				print(EnemyHealth.curHealthEn);
+				touchEnemy = false;
+				/*if (EnemyHealth.curHealthEn <=0) {
+					Destroy (enemy);
+				} */
+			}
+
+	}
 }
 
 
